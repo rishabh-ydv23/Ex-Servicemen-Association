@@ -9,6 +9,7 @@ import createError from 'http-errors';
 
 import connectDb from './modules/config/db.js';
 import authRoutes from './modules/routes/auth.js';
+import userAuthRoutes from './modules/routes/userAuth.js';
 import notificationRoutes from './modules/routes/notifications.js';
 import eventRoutes from './modules/routes/events.js';
 import galleryRoutes from './modules/routes/gallery.js';
@@ -40,6 +41,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/user-auth', userAuthRoutes);
 app.use('/api/public', publicRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/events', eventRoutes);

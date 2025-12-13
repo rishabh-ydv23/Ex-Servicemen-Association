@@ -7,7 +7,7 @@ A full-stack web application for managing an association for ex-servicemen, feat
 - **Frontend**: React + Vite + Tailwind CSS
 - **Backend**: Node.js + Express
 - **Database**: MongoDB with Mongoose ODM
-- **Authentication**: JWT (admin-only)
+- **Authentication**: JWT (admin and user)
 - **File Uploads**: Multer (stored locally in `/uploads`)
 - **Email Service**: Nodemailer using SMTP
 
@@ -123,9 +123,20 @@ $body = @{
 Invoke-RestMethod -Uri "http://localhost:5000/api/auth/bootstrap" -Method POST -Body $body -ContentType "application/json"
 ```
 
+## User Registration and Login
+
+Users can register and login through the public website:
+
+- **User Registration**: Open browser → `http://localhost:5173/register`
+- **User Login**: Open browser → `http://localhost:5173/login`
+- **User Dashboard**: After login → `http://localhost:5173/dashboard`
+
 ## Accessing the Application
 
 - **Public Website**: Open browser → `http://localhost:5173`
+- **User Registration**: Open browser → `http://localhost:5173/register`
+- **User Login**: Open browser → `http://localhost:5173/login`
+- **User Dashboard**: After login → `http://localhost:5173/dashboard`
 - **Admin Panel**: Open browser → `http://localhost:5173/admin/login`
   - Email: `admin@example.com`
   - Password: `Admin@123`

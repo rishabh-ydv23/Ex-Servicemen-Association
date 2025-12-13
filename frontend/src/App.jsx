@@ -8,6 +8,9 @@ import Notifications from './pages/Notifications.jsx'
 import Events from './pages/Events.jsx'
 import Gallery from './pages/Gallery.jsx'
 import Contact from './pages/Contact.jsx'
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
+import UserDashboard from './pages/UserDashboard.jsx'
 import AdminLogin from './pages/admin/AdminLogin.jsx'
 import Dashboard from './pages/admin/Dashboard.jsx'
 
@@ -29,6 +32,9 @@ export default function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<UserDashboard />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           </Routes>

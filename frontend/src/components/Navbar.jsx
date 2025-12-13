@@ -17,21 +17,39 @@ export default function Navbar() {
     { to: '/contact', label: t('contact') },
   ]
   
+  const authItems = [
+    { to: '/login', label: 'Login' },
+    { to: '/register', label: 'Register' },
+  ]
+  
   return (
     <header className="bg-white shadow sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="text-xl font-bold text-navy">Ex-Servicemen Association</Link>
-        <nav className="hidden md:flex gap-6">
-          {navItems.map((item) => (
-            <NavLink 
-              key={item.to} 
-              to={item.to} 
-              className={({isActive})=>`hover:text-navy ${isActive?'text-navy font-semibold':''}`}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="hidden md:flex gap-6">
+          <nav className="flex gap-6">
+            {navItems.map((item) => (
+              <NavLink 
+                key={item.to} 
+                to={item.to} 
+                className={({isActive})=>`hover:text-navy ${isActive?'text-navy font-semibold':''}`}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+          <nav className="flex gap-4 ml-4 pl-4 border-l border-gray-200">
+            {authItems.map((item) => (
+              <NavLink 
+                key={item.to} 
+                to={item.to} 
+                className={({isActive})=>`hover:text-navy ${isActive?'text-navy font-semibold':''}`}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
         <button 
           onClick={toggleLanguage}
           className="flex items-center gap-2 px-3 py-1 rounded bg-navy text-white hover:bg-opacity-90 transition"
