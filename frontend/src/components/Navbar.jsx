@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-navy">Ex-Servicemen Foundation</Link>
+        <Link to="/" className="text-xl font-bold text-navy">Ex-Servicemen Association</Link>
         <nav className="hidden md:flex gap-6">
           {navItems.map((item) => (
             <NavLink 

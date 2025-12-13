@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 border-t">
       <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-700 flex flex-col md:flex-row gap-2 md:gap-0 md:items-center md:justify-between">
-        <div>© Ex-Servicemen Foundation</div>
+        <div>© Ex-Servicemen Association</div>
         <div className="flex items-center gap-4">
           <span>Visitor count: {visits}</span>
           <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-saffron">Facebook</a>

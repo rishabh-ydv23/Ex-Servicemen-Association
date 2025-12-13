@@ -12,7 +12,7 @@ export default function About() {
     <div className="max-w-6xl mx-auto px-4 py-10">
       <h1 className="text-2xl font-bold text-navy">About Us</h1>
       <p className="mt-3 text-gray-700">
-        The Ex-Servicemen Foundation is dedicated to supporting Indian Army, Air Force, and Navy veterans
+        The Ex-Servicemen Association is dedicated to supporting Indian Army, Air Force, and Navy veterans
         and their families. Our mission is to honor their service through welfare initiatives, community engagement,
         and promoting opportunities for continued contribution to society.
       </p>

@@ -12,7 +12,7 @@ const translations = {
     'hindi': 'Hindi',
     
     // Footer
-    'copyright': '© {year} Ex-Servicemen Foundation',
+    'copyright': '© {year} Ex-Servicemen Association',
     'visitors': 'Visitors',
     'backToTop': 'Back to top',
     
@@ -24,7 +24,7 @@ const translations = {
     
     // About Page
     'aboutTitle': 'About Us',
-    'aboutDescription': 'Ex-Servicemen Foundation is dedicated to supporting Indian Army, Air Force, and Navy veterans through community engagement, welfare programs, and events celebrating service and sacrifice.',
+    'aboutDescription': 'Ex-Servicemen Association is dedicated to supporting Indian Army, Air Force, and Navy veterans through community engagement, welfare programs, and events celebrating service and sacrifice.',
     'purpose': 'Purpose',
     'purposeDescription': 'To create a strong support network for veterans and their families.',
     'vision': 'Vision',
