@@ -1,22 +1,35 @@
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext.jsx'
+import api from '../services/api'
 
 export default function Events() {
   const [items, setItems] = useState([])
   const [selected, setSelected] = useState(null)
   const [photos, setPhotos] = useState([])
   const [q, setQ] = useState('')
-  const load = () => fetch('/api/public/events?q='+encodeURIComponent(q)).then(r=>r.json()).then(setItems)
+  const { t } = useLanguage()
+  
+  const load = () => {
+    api.get(`/public/events?q=${encodeURIComponent(q)}`)
+      .then(response => setItems(response.data))
+      .catch(error => console.error('Error fetching events:', error))
+  }
+  
   useEffect(load, [])
+  
   function openEvent(e) {
     setSelected(e)
-    fetch(`/api/public/events/${e._id}/photos`).then(r=>r.json()).then(setPhotos)
+    api.get(`/public/events/${e._id}/photos`)
+      .then(response => setPhotos(response.data))
+      .catch(error => console.error('Error fetching photos:', error))
   }
+  
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-4">Events</h1>
+      <h1 className="text-3xl font-bold mb-4">{t('eventsTitle')}</h1>
       <div className="flex gap-2 mb-6">
-        <input className="border p-2 flex-1 rounded" placeholder="Search events" value={q} onChange={e=>setQ(e.target.value)} />
-        <button className="bg-navy text-white px-4 py-2 rounded" onClick={load}>Search</button>
+        <input className="border p-2 flex-1 rounded" placeholder={t('searchPlaceholder')} value={q} onChange={e=>setQ(e.target.value)} />
+        <button className="bg-navy text-white px-4 py-2 rounded" onClick={load}>{t('searchPlaceholder')}</button>
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         {items.map(e=> (
@@ -26,7 +39,7 @@ export default function Events() {
                 <h3 className="font-semibold">{e.title}</h3>
                 <p className="text-sm text-gray-600">{new Date(e.date).toLocaleDateString()}</p>
               </div>
-              <button className="text-navy underline" onClick={()=>openEvent(e)}>View Gallery</button>
+              <button className="text-navy underline" onClick={()=>openEvent(e)}>{t('viewGallery')}</button>
             </div>
             <p className="mt-2">{e.description}</p>
           </div>
@@ -36,8 +49,8 @@ export default function Events() {
       {selected && (
         <div className="mt-10">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold">{selected.title} - Photos</h2>
-            <a className="bg-navy text-white px-4 py-2 rounded" href={`/api/admin/events/${selected._id}/download`} target="_blank">Download All</a>
+            <h2 className="text-2xl font-bold">{selected.title} - {t('photos')}</h2>
+            <a className="bg-navy text-white px-4 py-2 rounded" href={`/api/admin/events/${selected._id}/download`} target="_blank">{t('downloadAll')}</a>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
             {photos.map(p => (

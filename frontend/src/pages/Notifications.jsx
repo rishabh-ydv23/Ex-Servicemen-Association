@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from '../services/api'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useLanguage } from '../contexts/LanguageContext.jsx'
 
 export default function Notifications() {
   const [items, setItems] = useState([])
@@ -49,7 +49,7 @@ export default function Notifications() {
           ))
         ) : (
           <div className="text-center py-10 text-gray-500">
-            {t('notificationsTitle')} {t('not found')}
+            {t('notificationsTitle')} {t('notFound')}
           </div>
         )}
       </div>

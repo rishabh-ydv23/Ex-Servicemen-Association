@@ -4,6 +4,7 @@ export default async function connectDb() {
   const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ex-servicemen-foundation';
   try {
     await mongoose.connect(mongoUri, {
+      dbName: 'exservicemen',
       autoIndex: true,
     });
     console.log('MongoDB connected');

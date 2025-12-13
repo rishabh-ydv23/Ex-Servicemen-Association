@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../services/api'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useLanguage } from '../contexts/LanguageContext.jsx'
 
 export default function Home() {
   const [data, setData] = useState({ notifications: [], photos: [] })
