@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import api from '../services/api'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Notifications() {
   const [items, setItems] = useState([])
   const [q, setQ] = useState('')
+  const { t } = useLanguage()
   
   const load = () => {
     api.get(`/public/notifications?q=${encodeURIComponent(q)}`)
@@ -17,11 +19,11 @@ export default function Notifications() {
   
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-4">Notifications</h1>
+      <h1 className="text-3xl font-bold mb-4">{t('notificationsTitle')}</h1>
       <div className="flex gap-2 mb-6">
         <input 
           className="border p-2 flex-1 rounded" 
-          placeholder="Search" 
+          placeholder={t('searchPlaceholder')} 
           value={q} 
           onChange={e => setQ(e.target.value)} 
         />
@@ -29,7 +31,7 @@ export default function Notifications() {
           className="bg-navy text-white px-4 py-2 rounded" 
           onClick={load}
         >
-          Search
+          {t('searchPlaceholder')}
         </button>
       </div>
       <div className="space-y-3">
@@ -47,7 +49,7 @@ export default function Notifications() {
           ))
         ) : (
           <div className="text-center py-10 text-gray-500">
-            No notifications found
+            {t('notificationsTitle')} {t('not found')}
           </div>
         )}
       </div>
