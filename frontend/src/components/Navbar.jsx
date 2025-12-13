@@ -37,25 +37,14 @@ export default function Navbar() {
           className="flex items-center gap-2 px-3 py-1 rounded bg-navy text-white hover:bg-opacity-90 transition"
           aria-label={t('language')}
         >
-          {language === 'en' ? (
-            // India flag icon
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
-              <rect width="24" height="16" fill="#ff9933"/>
-              <rect width="24" height="8" y="8" fill="#ffffff"/>
-              <rect width="24" height="5.33" y="10.67" fill="#138808"/>
-              <circle cx="12" cy="8" r="3" fill="#000088"/>
-              <circle cx="12" cy="8" r="2" fill="#ffffff"/>
-              <circle cx="12" cy="8" r="1" fill="#000088"/>
-            </svg>
-          ) : (
-            // UK flag icon
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
-              <rect width="24" height="16" fill="#012169"/>
-              <path d="M0 0l24 16m0-16L0 16" stroke="#FFFFFF" strokeWidth="3"/>
-              <path d="M12 0v16M0 8h24" stroke="#FFFFFF" strokeWidth="5"/>
-              <path d="M12 0v16M0 8h24" stroke="#C8102E" strokeWidth="3"/>
-            </svg>
-          )}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 8l6 6" />
+            <path d="M4 14l6-6 2-3" />
+            <path d="M2 5h12" />
+            <path d="M7 2v12" />
+            <path d="M22 22l-5-10-5 10" />
+            <path d="M14 18h6" />
+          </svg>
         </button>
       </div>
       <div className="h-1 w-full bg-gradient-to-r from-saffron via-white to-green" />
