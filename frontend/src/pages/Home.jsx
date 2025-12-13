@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import api from '../services/api'
 
 export default function Home() {
   const [data, setData] = useState({ notifications: [], photos: [] })
-  useEffect(()=>{ fetch('/api/public/home').then(r=>r.json()).then(setData) },[])
+  useEffect(()=>{ 
+    api.get('/public/home')
+      .then(response => setData(response.data))
+      .catch(error => console.error('Error fetching home data:', error))
+  },[])
   return (
     <div>
       <section className="bg-cover bg-center" style={{backgroundImage:'linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)), url(https://images.unsplash.com/photo-1608889175231-2f1f01cf15f7?q=80&w=1200&auto=format&fit=crop)'}}> 

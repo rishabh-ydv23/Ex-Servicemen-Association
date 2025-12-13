@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import api from '../services/api'
 
 export default function Footer() {
   const [visits, setVisits] = useState(null)
   useEffect(() => {
-    fetch('/api/public/visit', { method: 'POST' })
-      .then(r=>r.json()).then(d=>setVisits(d.total)).catch(()=>{})
+    api.post('/public/visit')
+      .then(response => setVisits(response.data.total))
+      .catch(() => {})
   }, [])
   return (
     <footer className="bg-gray-100 border-t mt-10">
