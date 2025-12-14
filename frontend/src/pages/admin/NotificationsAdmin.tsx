@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
+import { api } from '../../services/api.ts'
 import { Notification } from '../../types'
 
 export default function NotificationsAdmin() {
@@ -7,7 +7,7 @@ export default function NotificationsAdmin() {
   const [form, setForm] = useState({ title: '', message: '' })
 
   function load() {
-    api.get('/notifications').then(r => setItems(r.data)).catch(() => {})
+    api.get('/notifications').then((r: any) => setItems(r.data)).catch(() => {})
   }
   useEffect(() => { load() }, [])
 

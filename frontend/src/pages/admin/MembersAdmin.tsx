@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
+import { api } from '../../services/api.ts'
 import { Member } from '../../types'
 
 export default function MembersAdmin(){
