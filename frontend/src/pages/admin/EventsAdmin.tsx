@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { api } from '../../services/api.ts'
+import { api } from '../../services/api'
 import { Event } from '../../types'
 
 export default function EventsAdmin() {

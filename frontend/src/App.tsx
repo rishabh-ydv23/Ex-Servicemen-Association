@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { LanguageProvider } from './contexts/LanguageContext.tsx'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -24,29 +25,31 @@ function PrivateRoute({ children }: { children: JSX.Element }) {
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/notifications" element={<Notifications />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<UserDashboard />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-          <Route path="/admin/notifications" element={<PrivateRoute><NotificationsAdmin /></PrivateRoute>} />
-          <Route path="/admin/events" element={<PrivateRoute><EventsAdmin /></PrivateRoute>} />
-          <Route path="/admin/gallery" element={<PrivateRoute><GalleryAdmin /></PrivateRoute>} />
-          <Route path="/admin/members" element={<PrivateRoute><MembersAdmin /></PrivateRoute>} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<UserDashboard />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+            <Route path="/admin/notifications" element={<PrivateRoute><NotificationsAdmin /></PrivateRoute>} />
+            <Route path="/admin/events" element={<PrivateRoute><EventsAdmin /></PrivateRoute>} />
+            <Route path="/admin/gallery" element={<PrivateRoute><GalleryAdmin /></PrivateRoute>} />
+            <Route path="/admin/members" element={<PrivateRoute><MembersAdmin /></PrivateRoute>} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

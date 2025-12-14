@@ -15,4 +15,7 @@ export function setToken(token?: string) {
   else localStorage.removeItem('admin-token')
 }
 
+// Default export for compatibility
+export default api
+
 

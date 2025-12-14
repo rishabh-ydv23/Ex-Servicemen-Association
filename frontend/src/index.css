@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,15 +8,69 @@ html, body, #root {
   height: 100%;
 }
 
+body {
+  background: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1a2e5c;
+}
+
 .tri-gradient {
   background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
 
-html, body, #root { height: 100%; }
-body { background: #f8fafc; }
+/* Professional card styling */
+.card {
+  @apply bg-white rounded-lg shadow-soft border border-gray-100 overflow-hidden;
+}
+
+.card-hover {
+  @apply hover:shadow-medium hover:-translate-y-1;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-navy text-white px-6 py-2.5 rounded-lg font-medium shadow-soft hover:bg-navyDark hover:shadow-medium;
+}
+
+.btn-secondary {
+  @apply bg-olive text-white px-6 py-2.5 rounded-lg font-medium shadow-soft hover:bg-opacity-90 hover:shadow-medium;
+}
+
+.btn-accent {
+  @apply bg-saffron text-white px-6 py-2.5 rounded-lg font-medium shadow-soft hover:bg-opacity-90 hover:shadow-medium;
+}
+
+/* Section headers */
+.section-title {
+  @apply text-3xl font-bold text-navy mb-2 font-serif;
+}
+
+.section-subtitle {
+  @apply text-gray-600 text-lg mb-8;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-army {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-navy {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-airforce {
+  @apply bg-sky-100 text-sky-800;
+}
 
 
