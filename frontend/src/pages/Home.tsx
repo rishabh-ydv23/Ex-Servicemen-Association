@@ -23,7 +23,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2 font-serif">Latest Notifications</h2>
+            <h2 className="text-3xl font-bold text-navy mb-2 font-serif">Latest Notifications</h2>
             <p className="section-subtitle">Stay updated with important announcements and news</p>
           </div>
           <Link 
@@ -49,7 +49,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2 font-serif">Upcoming Events</h2>
+            <h2 className="text-3xl font-bold text-navy mb-2 font-serif">Upcoming Events</h2>
             <p className="section-subtitle">Join us for community gatherings and special occasions</p>
           </div>
           <Link 

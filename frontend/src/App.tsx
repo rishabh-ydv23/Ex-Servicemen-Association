@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { LanguageProvider } from './contexts/LanguageContext'
+import { LanguageProvider } from './contexts/LanguageContext.jsx'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -17,6 +17,8 @@ import NotificationsAdmin from './pages/admin/NotificationsAdmin'
 import EventsAdmin from './pages/admin/EventsAdmin'
 import GalleryAdmin from './pages/admin/GalleryAdmin'
 import MembersAdmin from './pages/admin/MembersAdmin'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const token = localStorage.getItem('admin-token')
@@ -45,6 +47,8 @@ function App() {
             <Route path="/admin/events" element={<PrivateRoute><EventsAdmin /></PrivateRoute>} />
             <Route path="/admin/gallery" element={<PrivateRoute><GalleryAdmin /></PrivateRoute>} />
             <Route path="/admin/members" element={<PrivateRoute><MembersAdmin /></PrivateRoute>} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />

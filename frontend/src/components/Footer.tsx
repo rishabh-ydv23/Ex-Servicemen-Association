@@ -3,7 +3,7 @@ import { api } from '../services/api'
 import { useLanguage } from '../contexts/LanguageContext.jsx'
 
 export default function Footer() {
-  const [visits, setVisits] = useState(null)
+  const [visits, setVisits] = useState<number | null>(null)
   const { t } = useLanguage()
   
   useEffect(() => {
@@ -95,9 +95,9 @@ export default function Footer() {
           <div className="mt-4 md:mt-0 flex items-center space-x-4">
             <a href="/contact" className="hover:text-white transition">Contact</a>
             <span>•</span>
-            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+            <a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a>
             <span>•</span>
-            <a href="#" className="hover:text-white transition">Terms of Service</a>
+            <a href="/terms-of-service" className="hover:text-white transition">Terms of Service</a>
           </div>
         </div>
       </div>
