@@ -20,7 +20,7 @@ export default function Home() {
 
       
       {/* Latest Notifications Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl font-bold text-navy mb-2 font-serif">Latest Notifications</h2>
@@ -44,6 +44,11 @@ export default function Home() {
           <div className="text-center py-12 text-gray-500">No notifications available</div>
         )}
       </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-gray-200 my-8"></div>
+      </div>
 
       {/* Recent Events Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
