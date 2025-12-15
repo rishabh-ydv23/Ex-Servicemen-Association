@@ -58,7 +58,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 // Static files for uploads
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads'), {
+  setHeaders: (res, path) => {
+    console.log('Serving static file:', path);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);

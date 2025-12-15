@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Photo } from '../types'
 
 export default function GalleryGrid({ photos }: { photos: Photo[] }) {
@@ -6,8 +6,11 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const openPhoto = (photo: Photo, index: number) => {
+    console.log('Opening photo:', photo);
+
     setActive(photo)
     setCurrentIndex(index)
+    console.log('Active photo set, index:', index);
   }
 
   const nextPhoto = () => {
@@ -33,12 +36,16 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
           <button 
             key={p._id} 
             className="group relative overflow-hidden rounded-lg shadow-soft hover:shadow-medium transition-all aspect-square"
-            onClick={() => openPhoto(p, idx)}
+            onClick={(e) => {
+              e.stopPropagation();
+              openPhoto(p, idx);
+            }}
           >
             <img 
               src={p.url} 
               alt={p.title || 'Gallery photo'} 
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+              onLoad={() => console.log('Thumbnail loaded:', p.url)}
               onError={(e) => {
                 console.error('Thumbnail failed to load:', p.url);
                 e.currentTarget.src = '/placeholder-thumbnail.png'; // Fallback thumbnail
@@ -62,12 +69,18 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
       {active && (
         <div 
           className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-          onClick={() => setActive(null)}
+          onClick={() => {
+            console.log('Modal background clicked, closing modal');
+            setActive(null);
+          }}
         >
           <div className="relative max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
             {/* Close Button */}
             <button
-              onClick={() => setActive(null)}
+              onClick={() => {
+                console.log('Close button clicked');
+                setActive(null);
+              }}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition z-10"
               aria-label="Close"
             >
@@ -105,15 +118,14 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
               <img 
                 src={active.url} 
                 alt={active.title || 'Gallery photo'} 
-                className="w-full max-h-[75vh] object-contain mx-auto" 
+                className="w-full max-h-[75vh] object-contain mx-auto"
+                onLoad={() => console.log('Image loaded successfully:', active.url)}
                 onError={(e) => {
                   console.error('Image failed to load:', active.url);
                   e.currentTarget.src = '/placeholder-image.png'; // Fallback image
                 }}
               />
               <div className="p-6 bg-white">
-                {/* Debug info - remove in production */}
-                <div className="mb-2 text-xs text-gray-500 break-all">URL: {active.url}</div>
                 <div>
                   {active.title && (
                     <h3 className="text-xl font-bold text-navy mb-2 font-serif">{active.title}</h3>
