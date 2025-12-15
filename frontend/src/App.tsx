@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { LanguageProvider } from './contexts/LanguageContext.tsx'
+import { LanguageProvider } from './contexts/LanguageContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'

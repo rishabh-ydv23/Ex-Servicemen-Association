@@ -1,36 +1,40 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
-
-const baseURL = import.meta.env.VITE_API_URL || '/api';
+import { api, setToken } from '../services/api';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
+  const [isAdmin, setIsAdmin] = useState(false);
   
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setCredentials(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     
     try {
-      const response = await axios.post(`${baseURL}/user-auth/login`, credentials);
+      if (isAdmin) {
+        const response = await api.post('/auth/login', credentials);
+        setToken(response.data.token); // stores admin-token
+        navigate('/admin');
+      } else {
+        const response = await api.post('/user-auth/login', credentials);
       localStorage.setItem('user-token', response.data.token);
-      // Redirect to user dashboard or home page after successful login
       navigate('/');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Login failed');
+      }
+    } catch (err: any) {
+      setError(err?.response?.data?.message || 'Login failed');
     } finally {
       setLoading(false);
     }
@@ -39,7 +43,7 @@ export default function Login() {
   return (
     <div className="max-w-md mx-auto px-4 py-10">
       <div className="bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center mb-6">User Login</h1>
+        <h1 className="text-2xl font-bold text-center mb-6">{isAdmin ? 'Admin Login' : 'User Login'}</h1>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -65,6 +69,16 @@ export default function Login() {
               required
             />
           </div>
+
+          <label className="flex items-center space-x-2 text-sm text-gray-700">
+            <input
+              type="checkbox"
+              className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+              checked={isAdmin}
+              onChange={(e) => setIsAdmin(e.target.checked)}
+            />
+            <span>Login as admin</span>
+          </label>
           
           {error && <div className="text-red-600 text-center py-2">{error}</div>}
           

@@ -118,7 +118,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-navy mb-1">Address</h3>
-                    <p className="text-gray-700">123 Veteran Avenue<br />New Delhi, India 110001</p>
+                    <p className="text-gray-700">913/1, Adarsh Nagar<br />Hiran Nagar, Unnao, Uttar Pradesh 209801</p>
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-navy mb-1">Phone</h3>
-                    <a href="tel:+919876543210" className="text-gray-700 hover:text-navy">+91 98765 43210</a>
+                    <a href="tel:+918299471336" className="text-gray-700 hover:text-navy">+91 82994 71336</a>
                   </div>
                 </div>
 
@@ -142,7 +142,35 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-navy mb-1">Email</h3>
-                    <a href="mailto:contact@exservicemen.org" className="text-gray-700 hover:text-navy">contact@exservicemen.org</a>
+                    <a href="mailto:exservicmenasso.india@gmail.com" className="text-gray-700 hover:text-navy">exservicmenasso.india@gmail.com</a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-navy mb-1">Facebook Group</h3>
+                    <a href="https://www.facebook.com/groups/1361858078952482/?ref=share&mibextid=KtfwRi" target="_blank" rel="noreferrer" className="text-gray-700 hover:text-navy">
+                      Join on Facebook
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-olive/10 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.72 4.28a3.6 3.6 0 00-5.09 0l-.63.63a1 1 0 000 1.41l1.08 1.08a1 1 0 001.41 0l.3-.3a.6.6 0 01.85 0l2.05 2.05a.6.6 0 010 .85l-5.9 5.9a.6.6 0 01-.85 0l-2.05-2.05a.6.6 0 010-.85l.3-.3a1 1 0 000-1.41l-1.08-1.08a1 1 0 00-1.41 0l-.63.63a3.6 3.6 0 000 5.09l2.44 2.44a3.6 3.6 0 005.09 0l7.07-7.07a3.6 3.6 0 000-5.09z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-navy mb-1">WhatsApp</h3>
+                    <a href="https://chat.whatsapp.com/KxmeMe9UX22CqUenIZDb3T" target="_blank" rel="noreferrer" className="text-gray-700 hover:text-navy">
+                      Join the WhatsApp group
+                    </a>
                   </div>
                 </div>
               </div>
@@ -156,7 +184,7 @@ export default function Contact() {
               <div className="relative h-80">
                 <iframe
                   title="map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.283779943572!2d77.2090!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzUwLjAiTiA3N8KwMTInMzIuNCJF!5e0!3m2!1sen!2sin!4v1600000000000"
+                  src="https://www.google.com/maps?q=913/1,+Adarsh+Nagar,+Hiran+Nagar,+Unnao,+Uttar+Pradesh+209801&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

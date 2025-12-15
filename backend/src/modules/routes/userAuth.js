@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import Member from '../models/Member.js';
 
 const router = Router();
 
@@ -23,6 +24,14 @@ router.post('/register', async (req, res) => {
     // Create user with password
     const userData = { name, email, phone, address, dateOfBirth, serviceDetails };
     const user = await User.createWithPassword(userData, password);
+
+    // Also add to members list (best effort)
+    try {
+      const role = (serviceDetails && serviceDetails.rank) || 'Member';
+      await Member.create({ name, role, bio: address });
+    } catch (err) {
+      console.warn('Could not create member entry for user', email, err);
+    }
     
     // Generate JWT token
     const token = jwt.sign(

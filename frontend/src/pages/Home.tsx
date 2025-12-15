@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
+import HomeGallerySlider from '../components/HomeGallerySlider'
 import { api } from '../services/api'
 import { Event, Notification, Photo } from '../types'
 import NotificationCard from '../components/NotificationCard'
@@ -14,12 +15,15 @@ export default function Home() {
   useEffect(() => {
     api.get('/notifications').then(r => setNotifications(r.data.slice(0, 3))).catch(() => {})
     api.get('/events').then(r => setEvents(r.data.slice(0, 3))).catch(() => {})
-    api.get('/gallery').then(r => setPhotos(r.data.slice(0, 6))).catch(() => {})
+    api.get('/gallery').then(r => setPhotos(r.data.slice(0, 7))).catch(() => {})
   }, [])
+
+  const gridPhotos = photos.slice(0, 6)
 
   return (
     <div className="bg-gray-50">
       <Hero />
+      <HomeGallerySlider photos={photos} />
       
       {/* Latest Notifications Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -90,9 +94,9 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-        {photos.length > 0 ? (
+        {gridPhotos.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {photos.map((p) => (
+            {gridPhotos.map((p) => (
               <Link 
                 key={p._id} 
                 to="/gallery"

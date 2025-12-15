@@ -114,35 +114,95 @@ export default function About() {
         {/* Head Members Section */}
         <section>
           <h2 className="section-title mb-8">Leadership Team</h2>
-          {members.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {members.map((m) => (
-                <div key={m._id} className="card card-hover p-6 text-center">
-                  {m.photoUrl ? (
-                    <div className="relative w-32 h-32 mx-auto mb-4">
-                      <img 
-                        src={m.photoUrl} 
-                        alt={m.name} 
-                        className="w-full h-full object-cover rounded-full border-4 border-navy/10" 
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center">
-                      <span className="text-4xl text-navy">👤</span>
-                    </div>
-                  )}
-                  <h3 className="font-bold text-xl text-navy mb-1 font-serif">{m.name}</h3>
-                  <div className="text-sm font-medium text-olive mb-3">{m.role}</div>
-                  {m.bio && (
-                    <p className="text-sm text-gray-700 leading-relaxed">{m.bio}</p>
-                  )}
-                </div>
-              ))}
+          
+          {/* Fixed Leadership Profiles */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Profile 1: Flight Lieutenant Ram Swaroop Yadav */}
+            <div className="card card-hover p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/leadership/ram-swaroop-yadav.jpg" 
+                  alt="Ram Swaroop Yadav" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+                />
+              </div>
+              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Ram Swaroop Yadav</h3>
+              <div className="text-sm font-medium text-olive mb-3">Flight Lieutenant (Retired)</div>
             </div>
-          ) : (
-            <div className="card p-12 text-center text-gray-500">
-              <p>Leadership team information will be displayed here</p>
+
+            {/* Profile 2: Flying Officer Muneshwar Singh Yadav */}
+            <div className="card card-hover p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/leadership/muneshwar-singh-yadav.jpg" 
+                  alt="Muneshwar Singh Yadav" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+                />
+              </div>
+              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Muneshwar Singh Yadav</h3>
+              <div className="text-sm font-medium text-olive mb-3">Flying Officer (Retired)</div>
             </div>
+
+            {/* Profile 3: Air Veteran Deshraj Yadav - General Secretary */}
+            <div className="card card-hover p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/leadership/deshraj-yadav.jpg" 
+                  alt="Deshraj Yadav" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+                />
+              </div>
+              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Deshraj Yadav</h3>
+              <div className="text-sm font-medium text-olive mb-3">Air Veteran - General Secretary</div>
+            </div>
+
+            {/* Profile 4: Air Veteran Rajesh Kumar - Management Secretary */}
+            <div className="card card-hover p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/leadership/rajesh-kumar.jpg" 
+                  alt="Rajesh Kumar" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+                />
+              </div>
+              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Rajesh Kumar</h3>
+              <div className="text-sm font-medium text-olive mb-3">Air Veteran - Management Secretary</div>
+            </div>
+          </div>
+
+          {/* Additional Members from Database (if any) */}
+          {members.length > 0 && (
+            <>
+              <h3 className="text-2xl font-bold text-navy mb-6 font-serif mt-12">Additional Members</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {members.map((m) => (
+                  <div key={m._id} className="card card-hover p-6 text-center">
+                    {m.photoUrl ? (
+                      <div className="relative w-32 h-32 mx-auto mb-4">
+                        <img 
+                          src={m.photoUrl} 
+                          alt={m.name} 
+                          className="w-full h-full object-cover rounded-full border-4 border-navy/10" 
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center">
+                        <span className="text-4xl text-navy">👤</span>
+                      </div>
+                    )}
+                    <h3 className="font-bold text-xl text-navy mb-1 font-serif">{m.name}</h3>
+                    <div className="text-sm font-medium text-olive mb-3">{m.role}</div>
+                    {m.bio && (
+                      <p className="text-sm text-gray-700 leading-relaxed">{m.bio}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </>
           )}
         </section>
       </div>

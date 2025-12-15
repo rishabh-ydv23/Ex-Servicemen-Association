@@ -5,14 +5,17 @@ import { useLanguage } from '../contexts/LanguageContext.jsx'
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage()
   const [logoError, setLogoError] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false)
   const navigate = useNavigate()
   
   // Check if user is logged in
   useEffect(() => {
     const checkAuth = () => {
       const userToken = localStorage.getItem('user-token')
-      setIsLoggedIn(!!userToken)
+      const adminToken = localStorage.getItem('admin-token')
+      setIsUserLoggedIn(!!userToken)
+      setIsAdminLoggedIn(!!adminToken)
     }
     
     checkAuth()
@@ -33,7 +36,9 @@ export default function Navbar() {
   
   const handleLogout = () => {
     localStorage.removeItem('user-token')
-    setIsLoggedIn(false)
+    localStorage.removeItem('admin-token')
+    setIsUserLoggedIn(false)
+    setIsAdminLoggedIn(false)
     navigate('/')
     window.location.reload() // Refresh to update UI
   }
@@ -96,7 +101,7 @@ export default function Navbar() {
           </nav>
           
           <div className="flex items-center space-x-3">
-            {!isLoggedIn ? (
+            {(!isUserLoggedIn && !isAdminLoggedIn) ? (
               <div className="hidden md:flex items-center space-x-2 border-l border-gray-200 pl-3 ml-3">
                 {authItems.map((item) => (
                   <NavLink 
@@ -116,6 +121,20 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="hidden md:flex items-center space-x-2 border-l border-gray-200 pl-3 ml-3">
+                {isAdminLoggedIn ? (
+                  <NavLink 
+                    to="/admin" 
+                    className={({isActive}) => 
+                      `px-3 py-1.5 text-sm font-medium rounded-lg transition ${
+                        isActive 
+                          ? 'bg-olive text-white' 
+                          : 'text-gray-600 hover:bg-gray-100 hover:text-navy'
+                      }`
+                    }
+                  >
+                    Admin Dashboard
+                  </NavLink>
+                ) : (
                 <NavLink 
                   to="/dashboard" 
                   className={({isActive}) => 
@@ -128,6 +147,7 @@ export default function Navbar() {
                 >
                   Dashboard
                 </NavLink>
+                )}
                 <button
                   onClick={handleLogout}
                   className="px-3 py-1.5 text-sm font-medium rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-600"
