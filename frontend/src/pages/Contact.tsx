@@ -35,7 +35,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="card p-8">
-            <h2 className="text-2xl font-bold text-navy mb-2 font-serif">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-white mb-2 font-serif">Send us a Message</h2>
             <p className="text-gray-600 mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
             
             <form className="space-y-5" onSubmit={submit}>
@@ -106,7 +106,7 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="card p-8">
-              <h2 className="text-2xl font-bold text-navy mb-6 font-serif">Get in Touch</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 font-serif">Get in Touch</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -117,7 +117,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy mb-1">Address</h3>
+                    <h3 className="font-semibold text-white mb-1">Address</h3>
                     <p className="text-gray-700">913/1, Adarsh Nagar<br />Hiran Nagar, Unnao, Uttar Pradesh 209801</p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy mb-1">Phone</h3>
+                    <h3 className="font-semibold text-white mb-1">Phone</h3>
                     <a href="tel:+918299471336" className="text-gray-700 hover:text-navy">+91 82994 71336</a>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy mb-1">Email</h3>
+                    <h3 className="font-semibold text-white mb-1">Email</h3>
                     <a href="mailto:exservicmenasso.india@gmail.com" className="text-gray-700 hover:text-navy">exservicmenasso.india@gmail.com</a>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy mb-1">Facebook Group</h3>
+                    <h3 className="font-semibold text-white mb-1">Facebook Group</h3>
                     <a href="https://www.facebook.com/groups/1361858078952482/?ref=share&mibextid=KtfwRi" target="_blank" rel="noreferrer" className="text-gray-700 hover:text-navy">
                       Join on Facebook
                     </a>
@@ -167,7 +167,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy mb-1">WhatsApp</h3>
+                    <h3 className="font-semibold text-white mb-1">WhatsApp</h3>
                     <a href="https://chat.whatsapp.com/KxmeMe9UX22CqUenIZDb3T" target="_blank" rel="noreferrer" className="text-gray-700 hover:text-navy">
                       Join the WhatsApp group
                     </a>
@@ -179,7 +179,7 @@ export default function Contact() {
             {/* Map */}
             <div className="card p-0 overflow-hidden">
               <div className="p-6 border-b border-gray-200">
-                <h3 className="text-lg font-bold text-navy font-serif">Find Us on Map</h3>
+                <h3 className="text-lg font-bold text-white font-serif">Find Us on Map</h3>
               </div>
               <div className="relative h-80">
                 <iframe

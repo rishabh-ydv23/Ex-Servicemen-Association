@@ -52,7 +52,7 @@ export default function Events() {
         {/* Upcoming Events */}
         {upcoming.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-navy mb-6 font-serif flex items-center">
+            <h2 className="text-2xl font-bold text-white mb-6 font-serif flex items-center">
               <span className="w-1 h-8 bg-saffron rounded-full mr-3"></span>
               Upcoming Events
             </h2>
@@ -65,7 +65,7 @@ export default function Events() {
         {/* Past Events */}
         {past.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-navy mb-6 font-serif flex items-center">
+            <h2 className="text-2xl font-bold text-white mb-6 font-serif flex items-center">
               <span className="w-1 h-8 bg-gray-400 rounded-full mr-3"></span>
               Past Events
             </h2>
@@ -95,7 +95,7 @@ export default function Events() {
             <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-strong my-8" onClick={(ev) => ev.stopPropagation()}>
               <div className="p-6 border-b border-gray-200 flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-navy font-serif">{active.title}</h2>
+                  <h2 className="text-2xl font-bold text-white font-serif">{active.title}</h2>
                   <p className="text-gray-600 mt-1">
                     {new Date(active.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                   </p>
