@@ -43,7 +43,7 @@ export default function Login() {
   return (
     <div className="max-w-md mx-auto px-4 py-10">
       <div className="bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center mb-6">{isAdmin ? 'Admin Login' : 'User Login'}</h1>
+        <h1 className="text-2xl font-bold text-center mb-6 text-white font-serif">{isAdmin ? 'Admin Login' : 'User Login'}</h1>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

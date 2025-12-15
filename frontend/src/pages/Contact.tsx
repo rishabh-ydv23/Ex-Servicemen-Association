@@ -26,7 +26,7 @@ export default function Contact() {
       {/* Header */}
       <div className="bg-gradient-to-r from-navy to-navyDark text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="section-title text-white text-4xl md:text-5xl mb-2 drop-shadow-lg">Contact Us</h1>
+          <h1 className="text-white text-4xl md:text-5xl mb-2 font-bold font-serif drop-shadow-lg">Contact Us</h1>
           <p className="text-lg text-white/90 drop-shadow-md">Get in touch with us - we'd love to hear from you</p>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-navy to-navyDark text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="section-title text-white text-4xl md:text-5xl mb-4 drop-shadow-lg">{t('aboutTitle')}</h1>
+          <h1 className="text-white text-4xl md:text-5xl mb-4 font-bold font-serif drop-shadow-lg">{t('aboutTitle')}</h1>
           <p className="text-xl text-white/90 max-w-3xl drop-shadow-md">
             {language === 'en' ? 'Ex-Servicemen Service Foundation - Continuing Service to the Nation' : 'पूर्व सैनिक सेवा फाउंडेशन - राष्ट्र की सेवा जारी'}
           </p>

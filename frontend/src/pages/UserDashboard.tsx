@@ -27,7 +27,7 @@ export default function UserDashboard() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">User Dashboard</h1>
+        <h1 className="text-3xl font-bold text-white font-serif">User Dashboard</h1>
         <button
           onClick={handleLogout}
           className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
