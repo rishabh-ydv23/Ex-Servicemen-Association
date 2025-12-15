@@ -6,7 +6,7 @@ import { execSync } from 'child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log('🔧 Ex-Servicemen Association - Automated Setup Script');
+console.log('🔧 Ex-Servicemen Service Foundation - Automated Setup Script');
 console.log('=====================================================\n');
 
 // Function to create .env file with default values if it doesn't exist

@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   if (!to) return res.status(500).json({ message: 'Email not configured' });
   const transporter = createTransporter();
   const info = await transporter.sendMail({
-    from: `Ex-Servicemen Association <${process.env.SMTP_USER || 'no-reply@example.com'}>`,
+    from: `Ex-Servicemen Service Foundation <${process.env.SMTP_USER || 'no-reply@example.com'}>`,
     to,
     subject: subject || 'New contact message',
     replyTo: email,

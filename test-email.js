@@ -5,7 +5,7 @@ async function testEmail() {
     const response = await axios.post('http://localhost:5000/api/contact', {
       name: 'Test User',
       email: 'test@example.com',
-      subject: 'Test Email from Ex-Servicemen Association',
+      subject: 'Test Email from Ex-Servicemen Service Foundation',
       message: 'This is a test message to verify that the email functionality is working correctly.'
     });
     

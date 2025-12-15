@@ -12,7 +12,7 @@ const translations = {
     'hindi': 'Hindi',
     
     // Footer
-    'copyright': '© {year} Ex-Servicemen Association',
+    'copyright': '© {year} Ex-Servicemen Service Foundation',
     'visitors': 'Visitors',
     'backToTop': 'Back to top',
     
@@ -24,7 +24,7 @@ const translations = {
     
     // About Page
     'aboutTitle': 'About Us',
-    'aboutDescription': 'Ex-Servicemen Association is dedicated to supporting Indian Army, Air Force, and Navy veterans through community engagement, welfare programs, and events celebrating service and sacrifice.',
+    'aboutDescription': 'Ex-Servicemen Service Foundation is dedicated to supporting Indian Army, Air Force, and Navy veterans through community engagement, welfare programs, and events celebrating service and sacrifice.',
     'purpose': 'Purpose',
     'purposeDescription': 'To create a strong support network for veterans and their families.',
     'vision': 'Vision',
@@ -86,7 +86,7 @@ const translations = {
     
     // About Page
     'aboutTitle': 'हमारे बारे में',
-    'aboutDescription': 'पूर्व सैनिक संस्थान भारतीय सेना, वायु सेना और नौसेना के पूर्व सैनिकों का समुदाय अभिसंगति, कल्याण कार्यक्रम और सेवा और बलिदान का जश्न मनाने वाले कार्यक्रमों के माध्यम से समर्थन करने के लिए समर्पित है।',
+    'aboutDescription': 'पूर्व सैनिक सेवा फाउंडेशन भारतीय सेना, वायु सेना और नौसेना के पूर्व सैनिकों का समुदाय अभिसंगति, कल्याण कार्यक्रम और सेवा और बलिदान का जश्न मनाने वाले कार्यक्रमों के माध्यम से समर्थन करने के लिए समर्पित है।',
     'purpose': 'उद्देश्य',
     'purposeDescription': 'पूर्व सैनिकों और उनके परिवारों के लिए एक मजबूत समर्थन नेटवर्क बनाना।',
     'vision': 'दृष्टि',

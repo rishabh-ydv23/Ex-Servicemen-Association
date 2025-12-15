@@ -1,4 +1,4 @@
-Write-Host "Ex-Servicemen Association - Git History Cleanup" -ForegroundColor Green
+Write-Host "Ex-Servicemen Service Foundation - Git History Cleanup" -ForegroundColor Green
 Write-Host "=============================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "This script will help clean up your git repository by:" -ForegroundColor Yellow

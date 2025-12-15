@@ -19,7 +19,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-4 font-light">
-            Ex-Servicemen Association
+            Ex-Servicemen Service Foundation
           </p>
           
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">

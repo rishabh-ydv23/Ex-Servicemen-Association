@@ -1,5 +1,5 @@
 @echo off
-echo Ex-Servicemen Association - Development Server
+echo Ex-Servicemen Service Foundation - Development Server
 echo ==============================================
 echo.
 echo This will start both the backend and frontend servers.

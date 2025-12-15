@@ -15,7 +15,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="section-title text-white text-4xl md:text-5xl mb-4">About Us</h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            Ex-Servicemen Association - Continuing Service to the Nation
+            Ex-Servicemen Service Foundation - Continuing Service to the Nation
           </p>
         </div>
       </div>
@@ -127,8 +127,8 @@ export default function About() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 />
               </div>
-              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Ram Swaroop Yadav</h3>
-              <div className="text-sm font-medium text-olive mb-3">Flight Lieutenant (Retired)</div>
+              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Ram Swaroop</h3>
+              <div className="text-sm font-medium text-olive mb-3">Flight Lieutenant (Retired) - Chief Patron</div>
             </div>
 
             {/* Profile 2: Flying Officer Muneshwar Singh Yadav */}
@@ -141,8 +141,8 @@ export default function About() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 />
               </div>
-              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Muneshwar Singh Yadav</h3>
-              <div className="text-sm font-medium text-olive mb-3">Flying Officer (Retired)</div>
+              <h3 className="font-bold text-xl text-navy mb-1 font-serif">मुनेश्वर सिंह</h3>
+              <div className="text-sm font-medium text-olive mb-3">Flying Officer (Retired) - President</div>
             </div>
 
             {/* Profile 3: Air Veteran Deshraj Yadav - General Secretary */}

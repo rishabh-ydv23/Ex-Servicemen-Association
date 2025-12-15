@@ -1,5 +1,5 @@
 @echo off
-echo Ex-Servicemen Association - Git History Cleanup
+echo Ex-Servicemen Service Foundation - Git History Cleanup
 echo =============================================
 echo.
 echo This script will help clean up your git repository by:

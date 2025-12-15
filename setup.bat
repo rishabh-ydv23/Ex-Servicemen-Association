@@ -1,5 +1,5 @@
 @echo off
-echo Ex-Servicemen Association - Automated Setup
+echo Ex-Servicemen Service Foundation - Automated Setup
 echo ========================================
 echo.
 echo Running setup script...

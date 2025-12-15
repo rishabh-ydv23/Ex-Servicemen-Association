@@ -66,7 +66,7 @@ export default function Navbar() {
               {!logoError ? (
                 <img 
                   src="/logo.png" 
-                  alt="Ex-Servicemen Association Logo" 
+                  alt="Ex-Servicemen Service Foundation Logo" 
                   className="w-full h-full object-contain"
                   onError={() => setLogoError(true)}
                 />
@@ -77,7 +77,7 @@ export default function Navbar() {
               )}
             </div>
             <div className="hidden sm:block">
-              <div className="text-lg font-bold text-navy font-serif">Ex-Servicemen Association</div>
+              <div className="text-lg font-bold text-navy font-serif">Ex-Servicemen Service Foundation</div>
             </div>
           </Link>
           

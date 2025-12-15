@@ -1,5 +1,5 @@
 @echo off
-echo Ex-Servicemen Association - Bootstrap Admin Account
+echo Ex-Servicemen Service Foundation - Bootstrap Admin Account
 echo ==================================================
 echo.
 echo This script will create an admin account if one doesn't already exist.

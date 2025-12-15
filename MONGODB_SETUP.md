@@ -1,6 +1,6 @@
 # MongoDB Setup Guide
 
-This guide will help you set up MongoDB for the Ex-Servicemen Association Portal.
+This guide will help you set up MongoDB for the Ex-Servicemen Service Foundation Portal.
 
 ## Option 1: Install MongoDB Community Edition (Local Installation)
 

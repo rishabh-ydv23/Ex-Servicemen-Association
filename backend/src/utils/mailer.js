@@ -27,7 +27,7 @@ export async function sendContactMail({ fromName, fromEmail, subject, message })
   const info = await transporter.sendMail({
     from: `${fromName} <${fromEmail}>`,
     to,
-    subject: `[Ex-Servicemen] ${subject}`,
+    subject: `[Ex-Servicemen Service Foundation] ${subject}`,
     text: message
   });
   return info;

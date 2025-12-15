@@ -1,4 +1,4 @@
-# Ex-Servicemen Association Portal
+# Ex-Servicemen Service Foundation Portal
 
 A full-stack web application for managing an association for ex-servicemen, featuring public website pages and an admin panel.
 

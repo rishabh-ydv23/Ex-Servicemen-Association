@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4 font-serif">Ex-Servicemen Association</h3>
+            <h3 className="font-bold text-lg mb-4 font-serif">Ex-Servicemen Service Foundation</h3>
             <p className="text-white/80 text-sm leading-relaxed">
               Dedicated to supporting Indian Armed Forces veterans who continue their service through community leadership and welfare initiatives.
             </p>
@@ -92,7 +92,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-white/80">
-          <p>© {new Date().getFullYear()} Ex-Servicemen Association. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ex-Servicemen Service Foundation. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex items-center space-x-4">
             <a href="/contact" className="hover:text-white transition">Contact</a>
             <span>•</span>

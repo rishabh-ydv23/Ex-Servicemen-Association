@@ -22,7 +22,7 @@
 
 ## File Location:
 ```
-Ex-Servicemen Association/
+Ex-Servicemen Service Foundation/
 └── frontend/
     └── public/
         └── logo.png  ← PUT YOUR LOGO HERE
