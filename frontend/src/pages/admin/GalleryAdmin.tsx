@@ -36,7 +36,10 @@ export default function GalleryAdmin() {
       <div className="grid md:grid-cols-4 gap-3 mt-6">
         {items.map((p) => (
           <div key={p._id} className="border rounded p-2 bg-white">
-            <img src={p.url} className="h-40 w-full object-cover rounded" />
+            <img src={p.url} className="h-40 w-full object-cover rounded" onError={(e) => {
+              console.error('Admin thumbnail failed to load:', p.url);
+              e.currentTarget.src = '/placeholder-admin.png'; // Fallback thumbnail
+            }} />
             <div className="flex items-center justify-between mt-2">
               <div className="text-xs text-gray-600">{(p.tags||[]).join(', ')}</div>
               <button className="text-red-600 text-sm" onClick={() => remove(p._id)}>Delete</button>

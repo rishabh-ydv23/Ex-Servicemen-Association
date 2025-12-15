@@ -39,6 +39,10 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
               src={p.url} 
               alt={p.title || 'Gallery photo'} 
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+              onError={(e) => {
+                console.error('Thumbnail failed to load:', p.url);
+                e.currentTarget.src = '/placeholder-thumbnail.png'; // Fallback thumbnail
+              }}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
               <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,9 +105,15 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
               <img 
                 src={active.url} 
                 alt={active.title || 'Gallery photo'} 
-                className="max-h-[75vh] w-full object-contain mx-auto" 
+                className="w-full max-h-[75vh] object-contain mx-auto" 
+                onError={(e) => {
+                  console.error('Image failed to load:', active.url);
+                  e.currentTarget.src = '/placeholder-image.png'; // Fallback image
+                }}
               />
               <div className="p-6 bg-white">
+                {/* Debug info - remove in production */}
+                <div className="mb-2 text-xs text-gray-500 break-all">URL: {active.url}</div>
                 <div>
                   {active.title && (
                     <h3 className="text-xl font-bold text-navy mb-2 font-serif">{active.title}</h3>
