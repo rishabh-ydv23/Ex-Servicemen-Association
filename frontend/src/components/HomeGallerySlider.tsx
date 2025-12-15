@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Photo } from '../types'
 
 const fallbackSlides: Photo[] = [
@@ -27,7 +26,7 @@ export default function HomeGallerySlider({ photos }: Props) {
     if (items.length < 2 || isPaused) return
     const id = setInterval(() => {
       setIndex((prev) => (prev + 1) % items.length)
-    }, 4500)
+    }, 2000)
     return () => clearInterval(id)
   }, [items.length, isPaused])
 
@@ -50,12 +49,6 @@ export default function HomeGallerySlider({ photos }: Props) {
           <div>
             <h2 className="section-title">Moments in Motion</h2>
           </div>
-          <Link to="/gallery" className="btn-secondary hidden md:inline-flex items-center gap-2">
-            View Gallery
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
         </div>
 
         <div className="relative overflow-hidden rounded-2xl shadow-strong bg-gray-900/80 text-white">
@@ -84,16 +77,6 @@ export default function HomeGallerySlider({ photos }: Props) {
                 )}
               </div>
               <div className="hidden md:flex items-center gap-3">
-                <a
-                  href={active.url}
-                  download
-                  className="px-4 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white backdrop-blur-sm transition text-sm font-medium flex items-center gap-2"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Download
-                </a>
                 <button
                   onClick={() => goTo(index - 1)}
                   className="p-3 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-sm transition"

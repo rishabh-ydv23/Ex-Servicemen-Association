@@ -6,20 +6,20 @@ export default function GalleryAdmin() {
   const [items, setItems] = useState<Photo[]>([])
   const [title, setTitle] = useState('')
   const [tags, setTags] = useState('')
-  const [files, setFiles] = useState<FileList | null>(null)
+  const [file, setFile] = useState<File | null>(null)
 
   function load(){ api.get('/gallery').then(r => setItems(r.data)).catch(() => {}) }
   useEffect(() => { load() }, [])
 
   async function upload(e: React.FormEvent){
     e.preventDefault()
-    if (!files || files.length === 0) return
+    if (!file) return
     const fd = new FormData()
-    Array.from(files).forEach(f => fd.append('images', f))
+    fd.append('images', file)
     fd.append('title', title)
     fd.append('tags', tags)
     await api.post('/gallery', fd, { headers: { 'Content-Type': 'multipart/form-data' } })
-    setFiles(null); setTitle(''); setTags(''); load()
+    setFile(null); setTitle(''); setTags(''); load()
   }
 
   async function remove(id: string){ await api.delete(`/gallery/${id}`); load() }
@@ -30,7 +30,7 @@ export default function GalleryAdmin() {
       <form className="mt-4 flex flex-col md:flex-row gap-3" onSubmit={upload}>
         <input className="border px-3 py-2 rounded" placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)} />
         <input className="border px-3 py-2 rounded" placeholder="Tags (comma separated)" value={tags} onChange={e=>setTags(e.target.value)} />
-        <input type="file" multiple onChange={e=>setFiles(e.target.files)} />
+        <input type="file" onChange={e=>setFile(e.target.files?.[0] || null)} />
         <button className="bg-navy text-white px-3 py-2 rounded">Upload</button>
       </form>
       <div className="grid md:grid-cols-4 gap-3 mt-6">

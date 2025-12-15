@@ -6,7 +6,7 @@ import { upload } from '../utils/storage.js';
 const router = Router();
 
 router.get('/', async (_req, res) => {
-  const items = await Member.find({}).sort({ priority: -1, createdAt: -1 });
+  const items = await Member.find({}).sort({ priority: 1, createdAt: 1 });
   res.json(items);
 });
 

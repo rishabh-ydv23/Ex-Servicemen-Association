@@ -11,6 +11,8 @@ export default function Home() {
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [events, setEvents] = useState<Event[]>([])
   const [photos, setPhotos] = useState<Photo[]>([])
+  const fallbackImg =
+    'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjZGRlMiIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIHJ4PSIyNCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkdGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOGE5MGFiIiBmb250LXNpemU9IjMyIj5JbWFnZSBsb2FkaW5nPC90ZXh0Pjwvc3ZnPg=='
 
   useEffect(() => {
     api.get('/notifications').then(r => setNotifications(r.data.slice(0, 3))).catch(() => {})
@@ -18,12 +20,13 @@ export default function Home() {
     api.get('/gallery').then(r => setPhotos(r.data.slice(0, 7))).catch(() => {})
   }, [])
 
+  const sliderPhotos: Photo[] = [] // keep gallery uploads out of the home slider
   const gridPhotos = photos.slice(0, 6)
 
   return (
     <div className="bg-gray-50">
       <Hero />
-      <HomeGallerySlider photos={photos} />
+      <HomeGallerySlider photos={sliderPhotos} />
       
       {/* Latest Notifications Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -105,6 +108,12 @@ export default function Home() {
                 <img 
                   src={p.url} 
                   alt={p.title || 'Gallery photo'} 
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    const img = e.currentTarget
+                    if (img.src !== fallbackImg) img.src = fallbackImg
+                  }}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />

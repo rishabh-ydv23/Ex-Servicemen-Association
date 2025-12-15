@@ -42,7 +42,7 @@ router.get('/gallery', async (req, res) => {
 });
 
 router.get('/members', async (req, res) => {
-  const members = await Member.find().sort({ createdAt: -1 });
+  const members = await Member.find().sort({ priority: 1, createdAt: 1 });
   res.json(members);
 });
 
