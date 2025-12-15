@@ -13,8 +13,8 @@ export default function About() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-navy to-navyDark text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="section-title text-white text-4xl md:text-5xl mb-4">About Us</h1>
-          <p className="text-xl text-white/90 max-w-3xl">
+          <h1 className="section-title text-white text-4xl md:text-5xl mb-4 drop-shadow-lg">About Us</h1>
+          <p className="text-xl text-white/90 max-w-3xl drop-shadow-md">
             Ex-Servicemen Service Foundation - Continuing Service to the Nation
           </p>
         </div>

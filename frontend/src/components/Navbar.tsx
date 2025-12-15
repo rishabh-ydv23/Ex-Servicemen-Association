@@ -48,7 +48,6 @@ export default function Navbar() {
     { to: '/about', label: t('about'), icon: 'ℹ️' },
     { to: '/notifications', label: t('notifications'), icon: '📢' },
     { to: '/events', label: t('events'), icon: '📅' },
-    { to: '/gallery', label: t('gallery'), icon: '🖼️' },
     { to: '/contact', label: t('contact'), icon: '📧' },
   ]
   

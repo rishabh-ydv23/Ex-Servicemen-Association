@@ -32,7 +32,6 @@ export default function Footer() {
               <li><a href="/about" className="text-white/80 hover:text-white transition">About Us</a></li>
               <li><a href="/notifications" className="text-white/80 hover:text-white transition">Notifications</a></li>
               <li><a href="/events" className="text-white/80 hover:text-white transition">Events</a></li>
-              <li><a href="/gallery" className="text-white/80 hover:text-white transition">Gallery</a></li>
             </ul>
           </div>
 

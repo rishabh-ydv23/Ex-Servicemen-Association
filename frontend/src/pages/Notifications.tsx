@@ -22,8 +22,8 @@ export default function Notifications() {
       {/* Header */}
       <div className="bg-gradient-to-r from-navy to-navyDark text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="section-title text-white text-4xl md:text-5xl mb-2">Notifications & Updates</h1>
-          <p className="text-lg text-white/90">Stay informed about important announcements and news</p>
+          <h1 className="section-title text-white text-4xl md:text-5xl mb-2 drop-shadow-lg">Notifications & Updates</h1>
+          <p className="text-lg text-white/90 drop-shadow-md">Stay informed about important announcements and news</p>
         </div>
       </div>
 

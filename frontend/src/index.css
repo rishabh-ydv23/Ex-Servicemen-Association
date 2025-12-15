@@ -73,4 +73,13 @@ body {
   @apply bg-sky-100 text-sky-800;
 }
 
+/* Drop shadow utilities */
+.drop-shadow-md {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.drop-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
