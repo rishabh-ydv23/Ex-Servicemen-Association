@@ -25,7 +25,7 @@ export default function NotificationsAdmin() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold text-white font-serif">Manage Notifications</h1>
+      <h1 className="text-2xl font-bold text-navy font-serif">Manage Notifications</h1>
       <form className="mt-4 grid gap-3 md:grid-cols-3" onSubmit={create}>
         <input className="border px-3 py-2 rounded" placeholder="Title" value={form.title} onChange={e=>setForm({...form, title:e.target.value})} required />
         <input className="border px-3 py-2 rounded" placeholder="Message" value={form.message} onChange={e=>setForm({...form, message:e.target.value})} required />
@@ -45,5 +45,3 @@ export default function NotificationsAdmin() {
     </div>
   )
 }
-
-

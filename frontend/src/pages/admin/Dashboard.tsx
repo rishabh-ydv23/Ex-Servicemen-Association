@@ -16,7 +16,7 @@ export default function Dashboard() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold text-white font-serif">Admin Dashboard</h1>
+      <h1 className="text-2xl font-bold text-navy font-serif">Admin Dashboard</h1>
       <div className="grid md:grid-cols-4 gap-4 mt-6">
         <Card title="Notifications" value={stats.notifications} to="/admin/notifications" />
         <Card title="Events" value={stats.events} to="/admin/events" />
@@ -35,5 +35,3 @@ function Card({ title, value, to }: { title: string, value: number, to: string }
     </Link>
   )
 }
-
-

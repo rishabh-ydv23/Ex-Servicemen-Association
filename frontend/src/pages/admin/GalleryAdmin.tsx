@@ -26,7 +26,7 @@ export default function GalleryAdmin() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold text-white font-serif">Manage Gallery</h1>
+      <h1 className="text-2xl font-bold text-navy font-serif">Manage Gallery</h1>
       <form className="mt-4 flex flex-col md:flex-row gap-3" onSubmit={upload}>
         <input className="border px-3 py-2 rounded" placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)} />
         <input className="border px-3 py-2 rounded" placeholder="Tags (comma separated)" value={tags} onChange={e=>setTags(e.target.value)} />
@@ -50,5 +50,3 @@ export default function GalleryAdmin() {
     </div>
   )
 }
-
-

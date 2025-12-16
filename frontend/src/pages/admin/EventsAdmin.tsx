@@ -33,7 +33,7 @@ export default function EventsAdmin() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold text-white font-serif">Manage Events</h1>
+      <h1 className="text-2xl font-bold text-navy font-serif">Manage Events</h1>
       <form className="mt-4 grid gap-3 md:grid-cols-4" onSubmit={create}>
         <input className="border px-3 py-2 rounded" placeholder="Title" value={form.title} onChange={e=>setForm({...form, title:e.target.value})} required />
         <input className="border px-3 py-2 rounded" placeholder="Description" value={form.description} onChange={e=>setForm({...form, description:e.target.value})} required />
@@ -66,5 +66,3 @@ export default function EventsAdmin() {
     </div>
   )
 }
-
-
