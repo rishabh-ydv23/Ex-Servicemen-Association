@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
+import HeroSlider from '../components/HeroSlider'
 import { api } from '../services/api'
 import { Event, Notification } from '../types'
 import NotificationCard from '../components/NotificationCard'
@@ -18,7 +19,11 @@ export default function Home() {
     <div className="bg-gray-50">
       <Hero />
 
-      
+      {/* Hero Slider Section */}
+      <div className="py-8">
+        <HeroSlider />
+      </div>
+
       {/* Latest Notifications Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <div className="flex items-center justify-between mb-8">
