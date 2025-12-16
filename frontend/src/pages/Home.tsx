@@ -23,6 +23,7 @@ export default function Home() {
       <div className="py-8">
         <HeroSlider />
       </div>
+      {/* Force rebuild for image deployment */}
 
       {/* Latest Notifications Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
