@@ -21,7 +21,16 @@ const translations = {
     'heroTitle': 'Honoring Those Who Served',
     'heroSubtitle': 'Indian Army, Air Force, and Navy veterans',
     'latestNotifications': 'Latest Notifications',
+    'stayUpdated': 'Stay updated with important announcements and news',
+    'upcomingEvents': 'Upcoming Events',
+    'joinCommunity': 'Join us for community gatherings and special occasions',
     'recentEventPhotos': 'Recent Event Photos',
+    'viewAll': 'View All',
+    'noNotifications': 'No notifications available',
+    'noEvents': 'No events scheduled',
+    'latestUpdates': 'Latest Updates',
+    'upcomingEventsButton': 'Upcoming Events',
+    'aboutUs': 'About Us',
     
     // About Page
     'aboutTitle': 'About Us',
@@ -93,7 +102,16 @@ const translations = {
     'heroTitle': 'उनका सम्मान जिन्होंने सेवा की',
     'heroSubtitle': 'भारतीय सेना, वायु सेना और नौसेना के पूर्व सैनिक',
     'latestNotifications': 'नवीनतम सूचनाएं',
+    'stayUpdated': 'महत्वपूर्ण घोषणाओं और समाचारों के साथ अद्यतन रहें',
+    'upcomingEvents': 'आगामी कार्यक्रम',
+    'joinCommunity': 'सामुदायिक सभाओं और विशेष अवसरों के लिए हमसे जुड़ें',
     'recentEventPhotos': 'हाल की घटना तस्वीरें',
+    'viewAll': 'सभी देखें',
+    'noNotifications': 'कोई सूचनाएं उपलब्ध नहीं हैं',
+    'noEvents': 'कोई कार्यक्रम निर्धारित नहीं है',
+    'latestUpdates': 'नवीनतम अपडेट',
+    'upcomingEventsButton': 'आगामी कार्यक्रम',
+    'aboutUs': 'हमारे बारे में',
     
     // About Page
     'aboutTitle': 'हमारे बारे में',

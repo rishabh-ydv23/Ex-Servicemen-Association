@@ -6,8 +6,10 @@ import { api } from '../services/api'
 import { Event, Notification } from '../types'
 import NotificationCard from '../components/NotificationCard'
 import EventCard from '../components/EventCard'
+import { useLanguage } from '../contexts/LanguageContext.jsx'
 
 export default function Home() {
+  const { t } = useLanguage()
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [events, setEvents] = useState<Event[]>([])
   useEffect(() => {
@@ -29,14 +31,14 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-navy mb-2 font-serif">Latest Notifications</h2>
-            <p className="section-subtitle">Stay updated with important announcements and news</p>
+            <h2 className="text-3xl font-bold text-navy mb-2 font-serif">{t('latestNotifications')}</h2>
+            <p className="section-subtitle">{t('stayUpdated')}</p>
           </div>
           <Link 
             to="/notifications" 
             className="hidden md:flex items-center text-navy hover:text-navyDark font-medium"
           >
-            View All
+            {t('viewAll')}
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -47,7 +49,7 @@ export default function Home() {
             {notifications.map((n) => (<NotificationCard key={n._id} n={n} />))}
           </div>
         ) : (
-          <div className="text-center py-8 text-gray-500">No notifications available</div>
+          <div className="text-center py-8 text-gray-500">{t('noNotifications')}</div>
         )}
       </section>
 
@@ -60,14 +62,14 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-navy mb-2 font-serif">Upcoming Events</h2>
-            <p className="section-subtitle">Join us for community gatherings and special occasions</p>
+            <h2 className="text-3xl font-bold text-navy mb-2 font-serif">{t('upcomingEvents')}</h2>
+            <p className="section-subtitle">{t('joinCommunity')}</p>
           </div>
           <Link 
             to="/events" 
             className="hidden md:flex items-center text-navy hover:text-navyDark font-medium"
           >
-            View All
+            {t('viewAll')}
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -78,7 +80,7 @@ export default function Home() {
             {events.map((e) => (<EventCard key={e._id} e={e} />))}
           </div>
         ) : (
-          <div className="text-center py-8 text-gray-500">No events scheduled</div>
+          <div className="text-center py-8 text-gray-500">{t('noEvents')}</div>
         )}
       </section>
 

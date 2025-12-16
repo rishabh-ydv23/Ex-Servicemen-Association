@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../contexts/LanguageContext.jsx'
 
 export default function Hero() {
+  const { t } = useLanguage()
   return (
     <section className="relative bg-gradient-to-br from-navy via-navyDark to-navyLight text-white overflow-hidden">
       {/* Subtle pattern overlay */}
@@ -15,16 +17,15 @@ export default function Hero() {
           </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 leading-tight">
-            Honoring Those Who Served
+            {t('heroTitle')}
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-3 font-light">
-            Ex-Servicemen Service Foundation
+            {t('organizationName')}
           </p>
           
           <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 max-w-2xl mx-auto px-2">
-            Indian Army, Air Force, and Navy veterans united in service to society, 
-            continuing their dedication through community service and welfare initiatives.
+            {t('heroSubtitle')}
           </p>
           
           <div className="flex flex-wrap gap-3 justify-center">
@@ -32,19 +33,19 @@ export default function Hero() {
               to="/notifications" 
               className="btn-primary bg-white text-navy hover:bg-gray-100 px-6 py-3 text-base sm:text-lg shadow-strong md:px-8 md:py-3 md:text-lg"
             >
-              📢 Latest Updates
+              📢 {t('latestUpdates')}
             </Link>
             <Link 
               to="/events" 
               className="btn-accent px-6 py-3 text-base sm:text-lg shadow-strong md:px-8 md:py-3 md:text-lg"
             >
-              📅 Upcoming Events
+              📅 {t('upcomingEventsButton')}
             </Link>
             <Link 
               to="/about" 
               className="btn-secondary px-6 py-3 text-base sm:text-lg shadow-strong md:px-8 md:py-3 md:text-lg"
             >
-              ℹ️ About Us
+              ℹ️ {t('aboutUs')}
             </Link>
           </div>
         </div>
