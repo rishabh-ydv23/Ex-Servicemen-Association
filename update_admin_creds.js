@@ -1,0 +1,1 @@
+db.admins.updateOne({email: 'admin@exservicemen.org'}, {$set: {email: 'rajeshunnao@gmail.com', passwordHash: '$2b$10$CCrSIVUq7ak3lOXdqhMT1OYtgGwG01tUHqwgRuPYAB9yWUXXH/Jb6'}})
