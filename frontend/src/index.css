@@ -88,34 +88,43 @@ body {
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .section-title {
-    @apply text-2xl mb-1;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
   }
   
   .section-subtitle {
-    @apply text-base mb-4;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
   
   /* Reduce padding on mobile */
   .py-16 {
-    @apply py-8;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
   .py-12 {
-    @apply py-6;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   
   .px-4 {
-    @apply px-3;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
   
   /* Adjust card padding for mobile */
   .card {
-    @apply p-4;
+    padding: 1rem;
   }
   
   /* Make buttons more touch-friendly */
   .btn-primary, .btn-secondary, .btn-accent {
-    @apply py-3 px-5 text-base;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 1rem;
   }
   
   /* Ensure proper mobile scrolling */
@@ -137,48 +146,46 @@ body {
 /* Extra small devices (phones, less than 480px) */
 @media (max-width: 480px) {
   .section-title {
-    @apply text-xl;
+    font-size: 1.25rem;
   }
   
   /* Further reduce padding on extra small screens */
   .py-8 {
-    @apply py-6;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   
   .py-6 {
-    @apply py-4;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   
   .px-3 {
-    @apply px-2;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   
   /* Adjust font sizes for better readability */
   .text-lg {
-    @apply text-base;
+    font-size: 1rem;
   }
   
   .text-xl {
-    @apply text-lg;
+    font-size: 1.125rem;
   }
   
   /* Ensure proper spacing for touch targets */
-  .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  .touch-spacing-y-2 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 0.75rem;
   }
   
-  .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  .touch-spacing-y-3 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 1rem;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* Adjust grid layouts for tablets */
-  .grid-cols-1.sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  
   /* Optimize hero section for tablets */
   .hero-content {
     padding-top: 2rem;
@@ -190,11 +197,13 @@ body {
 @media screen and (orientation: landscape) and (max-height: 500px) {
   /* Reduce padding on landscape mobile devices */
   .py-16 {
-    @apply py-8;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
   .py-12 {
-    @apply py-6;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   
   /* Adjust hero section for landscape */

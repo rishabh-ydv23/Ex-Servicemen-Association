@@ -48,7 +48,7 @@ export default function About() {
               </div>
               <h3 className="text-lg font-bold text-navy mb-2 font-serif">{t('ourVision')}</h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                {language === 'en' ? 'A society where veterans' expertise and dedication continue to shape the future through community leadership, welfare initiatives, and nation-building efforts.' : 'एक समाज जहां पूर्व सैनिकों की विशेषज्ञता और समर्पण भविष्य को आकार देना जारी रखता है सामुदायिक नेतृत्व, कल्याण पहल, और राष्ट्र-निर्माण प्रयासों के माध्यम से।'}
+                {language === 'en' ? 'A society where veterans expertise and dedication continue to shape the future through community leadership, welfare initiatives, and nation-building efforts.' : 'एक समाज जहां पूर्व सैनिकों की विशेषज्ञता और समर्पण भविष्य को आकार देना जारी रखता है सामुदायिक नेतृत्व, कल्याण पहल, और राष्ट्र-निर्माण प्रयासों के माध्यम से।'}
               </p>
             </div>
           
