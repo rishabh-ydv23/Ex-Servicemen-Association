@@ -14,8 +14,9 @@ export default function Contact() {
       setSent(true)
       setForm({ name: '', email: '', subject: '', message: '' })
       setTimeout(() => setSent(false), 5000)
-    } catch (error) {
-      // Error handling
+    } catch (error: any) {
+      console.error('Contact form error:', error)
+      alert(`Failed to send message: ${error.response?.data?.error || error.message || 'Unknown error'}`)
     } finally {
       setSending(false)
     }
