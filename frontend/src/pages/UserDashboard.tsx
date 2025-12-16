@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCurrentUser, logoutUser } from '../services/userAuth';
+import { getCurrentUser, logoutUser, UserData } from '../services/userAuth';
 
 export default function UserDashboard() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<UserData | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {

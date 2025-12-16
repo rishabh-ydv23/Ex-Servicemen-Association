@@ -4,8 +4,25 @@ import axios from 'axios';
 
 const baseURL = import.meta.env.VITE_API_URL || '/api';
 
+interface ServiceDetails {
+  branch: string;
+  rank: string;
+  fromDate: string;
+  toDate: string;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+  phone: string;
+  address: string;
+  dateOfBirth: string;
+  serviceDetails: ServiceDetails;
+}
+
 export default function Register() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     password: '',
@@ -20,14 +37,14 @@ export default function Register() {
     }
   });
   
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     if (name.startsWith('service.')) {
-      const serviceName = name.split('.')[1];
+      const serviceName = name.split('.')[1] as keyof ServiceDetails;
       setFormData(prev => ({
         ...prev,
         serviceDetails: {
@@ -40,7 +57,7 @@ export default function Register() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -50,8 +67,12 @@ export default function Register() {
       localStorage.setItem('user-token', response.data.token);
       // Redirect to user dashboard or home page after successful registration
       navigate('/');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed');
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.message || 'Registration failed');
+      } else {
+        setError('Registration failed');
+      }
     } finally {
       setLoading(false);
     }
@@ -117,7 +138,7 @@ export default function Register() {
               value={formData.address}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              rows="3"
+              rows={3}
             ></textarea>
           </div>
           
