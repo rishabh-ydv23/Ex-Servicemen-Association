@@ -76,7 +76,7 @@ export default function Navbar() {
               )}
             </div>
             <div className="hidden sm:block">
-              <div className="text-lg font-bold text-navy font-serif">Ex-Servicemen Service Foundation</div>
+              <div className="text-lg font-bold text-navy font-serif">{t('organizationName')}</div>
             </div>
           </Link>
           

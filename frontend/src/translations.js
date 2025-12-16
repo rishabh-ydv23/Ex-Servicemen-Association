@@ -10,6 +10,7 @@ const translations = {
     'language': 'Language',
     'english': 'English',
     'hindi': 'Hindi',
+    'organizationName': 'Ex-Servicemen Service Foundation',
     
     // Footer
     'copyright': '© {year} Ex-Servicemen Service Foundation',
@@ -24,7 +25,7 @@ const translations = {
     
     // About Page
     'aboutTitle': 'About Us',
-    'aboutDescription': 'Ex-Servicemen Service Foundation is dedicated to supporting Indian Army, Air Force, and Navy veterans through community engagement, welfare programs, and events celebrating service and sacrifice.',
+    'aboutDescription': 'Ex-Servicemen Service Foundation is dedicated to supporting Indian Army, Air Force and Navy veterans through community engagement, welfare programs, and events celebrating service and sacrifice.',
     'ourMission': 'Our Mission',
     'ourVision': 'Our Vision',
     'ourValues': 'Our Values',
@@ -81,6 +82,7 @@ const translations = {
     'language': 'भाषा',
     'english': 'अंग्रेज़ी',
     'hindi': 'हिंदी',
+    'organizationName': 'पूर्व सैनिक सेवा फाउंडेशन',
     
     // Footer
     'copyright': '© {year} पूर्व सैनिक संस्थान',
