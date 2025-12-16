@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Member } from '../types'
 import { api } from '../services/api'
+// @ts-ignore
 import { useLanguage } from '../contexts/LanguageContext.jsx'
 
 export default function About() {
@@ -67,7 +68,7 @@ export default function About() {
 
         {/* History Timeline */}
         <section className="mb-16">
-          <h2 className="section-title text-white mb-8">{t('ourJourney')}</h2>
+          <h2 className="section-title text-blue-600 mb-8">{t('ourJourney')}</h2>
           <div className="card p-8">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
@@ -109,7 +110,7 @@ export default function About() {
 
         {/* Head Members Section */}
         <section>
-          <h2 className="section-title text-white mb-8">{t('leadershipTeam')}</h2>
+          <h2 className="section-title text-blue-600 mb-8">{t('leadershipTeam')}</h2>
           
           {/* Fixed Leadership Profiles */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -173,7 +174,7 @@ export default function About() {
           {/* Additional Members from Database (if any) */}
           {members.length > 0 && (
             <>
-              <h3 className="text-2xl font-bold text-white mb-6 font-serif mt-12">{t('additionalMembers')}</h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-6 font-serif mt-12">{t('additionalMembers')}</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {members.map((m) => (
                   <div key={m._id} className="card card-hover p-6 text-center">
@@ -205,5 +206,3 @@ export default function About() {
     </div>
   )
 }
-
-
