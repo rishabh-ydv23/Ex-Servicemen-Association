@@ -3,24 +3,22 @@ import { api } from '../../services/api'
 import { Link } from 'react-router-dom'
 
 export default function Dashboard() {
-  const [stats, setStats] = useState({ notifications: 0, events: 0, photos: 0, members: 0 })
+  const [stats, setStats] = useState({ notifications: 0, events: 0, members: 0 })
   useEffect(() => {
     Promise.all([
       api.get('/notifications'),
       api.get('/events'),
-      api.get('/gallery'),
       api.get('/members'),
-    ]).then(([n, e, g, m]) => setStats({ notifications: n.data.length, events: e.data.length, photos: g.data.length, members: m.data.length }))
+    ]).then(([n, e, m]) => setStats({ notifications: n.data.length, events: e.data.length, members: m.data.length }))
     .catch(() => {})
   }, [])
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <h1 className="text-2xl font-bold text-navy font-serif">Admin Dashboard</h1>
-      <div className="grid md:grid-cols-4 gap-4 mt-6">
+      <div className="grid md:grid-cols-3 gap-4 mt-6">
         <Card title="Notifications" value={stats.notifications} to="/admin/notifications" />
         <Card title="Events" value={stats.events} to="/admin/events" />
-        <Card title="Photos" value={stats.photos} to="/admin/gallery" />
         <Card title="Members" value={stats.members} to="/admin/members" />
       </div>
     </div>

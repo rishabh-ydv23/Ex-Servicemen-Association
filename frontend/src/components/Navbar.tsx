@@ -215,10 +215,10 @@ export default function Navbar() {
               </div>
             )}
             
-            {/* Mobile menu button */}
+            {/* Mobile menu button - hidden on md and larger screens */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex items-center justify-center w-9 h-9 rounded-lg bg-navy text-white hover:bg-navyDark transition shadow-soft hover:shadow-medium"
+              className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-navy text-white hover:bg-navyDark transition shadow-soft hover:shadow-medium"
               aria-label="Toggle menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,9 +242,9 @@ export default function Navbar() {
         </div>
       </div>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - hidden on md and larger screens */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow-medium">
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-medium">
           <div className="px-4 py-3 space-y-1">
             {navItems.map((item) => (
               <NavLink 
