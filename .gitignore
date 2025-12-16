@@ -85,10 +85,14 @@ dist/
 
 # Gatsby files
 .cache/
-public/
 
 # vuepress build output
 .vuepress/dist
+
+# Allow public assets except uploads
+public/*
+!public/leadership/
+!public/leadership/**
 
 # Serverless directories
 .serverless/
