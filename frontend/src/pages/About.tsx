@@ -68,7 +68,7 @@ export default function About() {
 
         {/* History Timeline */}
         <section className="mb-16">
-          <h2 className="section-title text-blue-600 mb-8">{t('ourJourney')}</h2>
+          <h2 className="section-title text-blue-600 mb-8" style={{ color: '#2563eb' }}>{t('ourJourney')}</h2>
           <div className="card p-8">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
