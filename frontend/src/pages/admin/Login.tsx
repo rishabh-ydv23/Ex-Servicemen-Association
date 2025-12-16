@@ -22,7 +22,7 @@ export default function Login() {
 
   return (
     <div className="max-w-md mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold text-white font-serif">Admin Login</h1>
+      <h1 className="text-2xl font-bold text-navy font-serif">Admin Login</h1>
       <form className="space-y-3 mt-6" onSubmit={submit}>
         <input className="border px-3 py-2 rounded w-full" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
         <input className="border px-3 py-2 rounded w-full" placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} />
