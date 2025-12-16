@@ -37,11 +37,11 @@ export default function Home() {
           </Link>
         </div>
         {notifications.length > 0 ? (
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {notifications.map((n) => (<NotificationCard key={n._id} n={n} />))}
           </div>
         ) : (
-          <div className="text-center py-12 text-gray-500">No notifications available</div>
+          <div className="text-center py-8 text-gray-500">No notifications available</div>
         )}
       </section>
 
@@ -68,11 +68,11 @@ export default function Home() {
           </Link>
         </div>
         {events.length > 0 ? (
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {events.map((e) => (<EventCard key={e._id} e={e} />))}
           </div>
         ) : (
-          <div className="text-center py-12 text-gray-500">No events scheduled</div>
+          <div className="text-center py-8 text-gray-500">No events scheduled</div>
         )}
       </section>
 

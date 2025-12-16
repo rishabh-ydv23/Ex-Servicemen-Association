@@ -6,6 +6,10 @@
 
 html, body, #root {
   height: 100%;
+  /* Improve mobile scrolling performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -23,6 +27,35 @@ body {
   transition-property: color, background-color, border-color, opacity, transform, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
+}
+
+/* Disable transitions on mobile to improve performance */
+@media (max-width: 768px) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* Prevent iOS Safari zoom on form inputs */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    font-size: 16px;
+  }
 }
 
 /* Professional card styling */
@@ -52,8 +85,146 @@ body {
   @apply text-3xl font-bold text-white mb-2 font-serif;
 }
 
-.section-subtitle {
-  @apply text-gray-600 text-lg mb-8;
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-2xl mb-1;
+  }
+  
+  .section-subtitle {
+    @apply text-base mb-4;
+  }
+  
+  /* Reduce padding on mobile */
+  .py-16 {
+    @apply py-8;
+  }
+  
+  .py-12 {
+    @apply py-6;
+  }
+  
+  .px-4 {
+    @apply px-3;
+  }
+  
+  /* Adjust card padding for mobile */
+  .card {
+    @apply p-4;
+  }
+  
+  /* Make buttons more touch-friendly */
+  .btn-primary, .btn-secondary, .btn-accent {
+    @apply py-3 px-5 text-base;
+  }
+  
+  /* Ensure proper mobile scrolling */
+  html, body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimize line heights for readability on small screens */
+  p {
+    line-height: 1.5;
+  }
+  
+  /* Prevent text overflows */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+  }
+}
+
+/* Extra small devices (phones, less than 480px) */
+@media (max-width: 480px) {
+  .section-title {
+    @apply text-xl;
+  }
+  
+  /* Further reduce padding on extra small screens */
+  .py-8 {
+    @apply py-6;
+  }
+  
+  .py-6 {
+    @apply py-4;
+  }
+  
+  .px-3 {
+    @apply px-2;
+  }
+  
+  /* Adjust font sizes for better readability */
+  .text-lg {
+    @apply text-base;
+  }
+  
+  .text-xl {
+    @apply text-lg;
+  }
+  
+  /* Ensure proper spacing for touch targets */
+  .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.75rem;
+  }
+  
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust grid layouts for tablets */
+  .grid-cols-1.sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  /* Optimize hero section for tablets */
+  .hero-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Handle mobile orientation changes */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  /* Reduce padding on landscape mobile devices */
+  .py-16 {
+    @apply py-8;
+  }
+  
+  .py-12 {
+    @apply py-6;
+  }
+  
+  /* Adjust hero section for landscape */
+  .hero-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .hero-buttons {
+    gap: 0.5rem;
+  }
+  
+  .hero-buttons a {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* High resolution mobile devices */
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 480px) {
+  /* Sharpen text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Optimize images for high DPI screens */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
 }
 
 /* Badge styles */

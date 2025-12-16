@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext.jsx'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -25,10 +26,21 @@ function PrivateRoute({ children }: { children: JSX.Element }) {
   return token ? children : <AdminLogin />
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen flex flex-col">
+        <ScrollToTop />
         <Navbar />
         <main className="flex-1">
           <Routes>

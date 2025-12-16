@@ -26,40 +26,40 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Mission Section */}
         <section className="mb-16">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card p-8 text-center">
-              <div className="flex items-center justify-center w-16 h-16 bg-navy/10 rounded-full mx-auto mb-4">
-                <svg className="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-navy/10 rounded-full mx-auto mb-3">
+                <svg className="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-navy mb-3 font-serif">{t('ourMission')}</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg font-bold text-navy mb-2 font-serif">{t('ourMission')}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
                 {language === 'en' ? 'To support and empower Indian Army, Air Force, and Navy veterans, fostering a community of dedicated service members who continue to contribute to society and nation-building.' : 'भारतीय सेना, वायु सेना और नौसेना के पूर्व सैनिकों का समर्थन और सशक्तिकरण करना, एक समुदाय को बढ़ावा देना जो समर्पित सेवा सदस्यों का है जो समाज और राष्ट्र-निर्माण में योगदान जारी रखते हैं।'}
               </p>
             </div>
-
-            <div className="card p-8 text-center">
-              <div className="flex items-center justify-center w-16 h-16 bg-olive/10 rounded-full mx-auto mb-4">
-                <svg className="w-8 h-8 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          
+            <div className="card p-6 text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-olive/10 rounded-full mx-auto mb-3">
+                <svg className="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-navy mb-3 font-serif">{t('ourVision')}</h3>
-              <p className="text-gray-700 leading-relaxed">
-                {language === 'en' ? 'A society where veterans\' expertise and dedication continue to shape the future through community leadership, welfare initiatives, and nation-building efforts.' : 'एक समाज जहां पूर्व सैनिकों की विशेषज्ञता और समर्पण भविष्य को आकार देना जारी रखता है सामुदायिक नेतृत्व, कल्याण पहल, और राष्ट्र-निर्माण प्रयासों के माध्यम से।'}
+              <h3 className="text-lg font-bold text-navy mb-2 font-serif">{t('ourVision')}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {language === 'en' ? 'A society where veterans' expertise and dedication continue to shape the future through community leadership, welfare initiatives, and nation-building efforts.' : 'एक समाज जहां पूर्व सैनिकों की विशेषज्ञता और समर्पण भविष्य को आकार देना जारी रखता है सामुदायिक नेतृत्व, कल्याण पहल, और राष्ट्र-निर्माण प्रयासों के माध्यम से।'}
               </p>
             </div>
-
-            <div className="card p-8 text-center">
-              <div className="flex items-center justify-center w-16 h-16 bg-saffron/10 rounded-full mx-auto mb-4">
-                <svg className="w-8 h-8 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          
+            <div className="card p-6 text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-saffron/10 rounded-full mx-auto mb-3">
+                <svg className="w-6 h-6 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-navy mb-3 font-serif">{t('ourValues')}</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg font-bold text-navy mb-2 font-serif">{t('ourValues')}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
                 {language === 'en' ? 'Integrity, dedication, service, and excellence - values instilled through military service and carried forward in all aspects of life and community service.' : 'ईमानदारी, समर्पण, सेवा और उत्कृष्टता - सैन्य सेवा के माध्यम से प्रेरित मूल्य और जीवन और सामुदायिक सेवा के सभी पहलुओं में आगे बढ़ाए गए।'}
               </p>
             </div>
@@ -113,10 +113,10 @@ export default function About() {
           <h2 className="section-title text-blue-600 mb-8" style={{ color: '#2563eb' }}>{t('leadershipTeam')}</h2>
           
           {/* Fixed Leadership Profiles */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             {/* Profile 1: Flight Lieutenant Ram Swaroop Yadav */}
-            <div className="card card-hover p-6 text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="card card-hover p-4 text-center">
+              <div className="w-24 h-24 mx-auto mb-3 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
                 <img 
                   src="/leadership/ram-swaroop-yadav.jpg" 
                   alt="Ram Swaroop Yadav" 
@@ -124,13 +124,13 @@ export default function About() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 />
               </div>
-              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Ram Swaroop</h3>
-              <div className="text-sm font-medium text-olive mb-3">Flight Lieutenant (Retired) - Chief Patron</div>
+              <h3 className="font-bold text-lg text-navy mb-1 font-serif">Ram Swaroop</h3>
+              <div className="text-xs font-medium text-olive mb-2">Flight Lieutenant (Retired) - Chief Patron</div>
             </div>
 
             {/* Profile 2: Flying Officer Muneshwar Singh Yadav */}
-            <div className="card card-hover p-6 text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="card card-hover p-4 text-center">
+              <div className="w-24 h-24 mx-auto mb-3 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
                 <img 
                   src="/leadership/muneshwar-singh-yadav.jpg" 
                   alt="Muneshwar Singh Yadav" 
@@ -138,13 +138,13 @@ export default function About() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 />
               </div>
-              <h3 className="font-bold text-xl text-navy mb-1 font-serif">मुनेश्वर सिंह</h3>
-              <div className="text-sm font-medium text-olive mb-3">Flying Officer (Retired) - President</div>
+              <h3 className="font-bold text-lg text-navy mb-1 font-serif">मुनेश्वर सिंह</h3>
+              <div className="text-xs font-medium text-olive mb-2">Flying Officer (Retired) - President</div>
             </div>
 
             {/* Profile 3: Air Veteran Deshraj Yadav - General Secretary */}
-            <div className="card card-hover p-6 text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="card card-hover p-4 text-center">
+              <div className="w-24 h-24 mx-auto mb-3 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
                 <img 
                   src="/leadership/deshraj-yadav.jpg" 
                   alt="Deshraj Yadav" 
@@ -152,13 +152,13 @@ export default function About() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 />
               </div>
-              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Deshraj Yadav</h3>
-              <div className="text-sm font-medium text-olive mb-3">Air Veteran - General Secretary</div>
+              <h3 className="font-bold text-lg text-navy mb-1 font-serif">Deshraj Yadav</h3>
+              <div className="text-xs font-medium text-olive mb-2">Air Veteran - General Secretary</div>
             </div>
 
             {/* Profile 4: Air Veteran Rajesh Kumar - Management Secretary */}
-            <div className="card card-hover p-6 text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="card card-hover p-4 text-center">
+              <div className="w-24 h-24 mx-auto mb-3 bg-navy/10 rounded-full flex items-center justify-center overflow-hidden">
                 <img 
                   src="/leadership/rajesh-kumar.jpg" 
                   alt="Rajesh Kumar" 
@@ -166,8 +166,8 @@ export default function About() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 />
               </div>
-              <h3 className="font-bold text-xl text-navy mb-1 font-serif">Rajesh Kumar</h3>
-              <div className="text-sm font-medium text-olive mb-3">Air Veteran - Management Secretary</div>
+              <h3 className="font-bold text-lg text-navy mb-1 font-serif">Rajesh Kumar</h3>
+              <div className="text-xs font-medium text-olive mb-2">Air Veteran - Management Secretary</div>
             </div>
           </div>
 

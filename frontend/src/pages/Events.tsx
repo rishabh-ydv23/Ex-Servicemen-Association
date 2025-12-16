@@ -56,7 +56,7 @@ export default function Events() {
               <span className="w-1 h-8 bg-saffron rounded-full mr-3"></span>
               Upcoming Events
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {upcoming.map((e) => (<EventCard key={e._id} e={e} onOpen={setActive} />))}
             </div>
           </section>
@@ -69,7 +69,7 @@ export default function Events() {
               <span className="w-1 h-8 bg-gray-400 rounded-full mr-3"></span>
               Past Events
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {past.map((e) => (<EventCard key={e._id} e={e} onOpen={setActive} />))}
             </div>
           </section>
