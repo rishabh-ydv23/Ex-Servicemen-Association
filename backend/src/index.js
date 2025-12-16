@@ -20,7 +20,8 @@ import publicRoutes from './routes/public.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+// Use the PORT from environment or default to 10000 for Render
+const PORT = process.env.PORT || 10000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -38,6 +39,7 @@ const corsOptions = {
     const allowedOrigins = [
       'http://localhost:5173',
       'http://localhost:5174',
+      'https://ex-servicemen-frontend.onrender.com',
       process.env.CLIENT_URL
     ];
     
@@ -75,9 +77,9 @@ app.use('/api/gallery', galleryRoutes);
 app.use('/api/members', memberRoutes);
 app.use('/api/contact', contactRoutes);
 
-// Health
+// Health check endpoint
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok' });
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
 // 404 handler
@@ -95,8 +97,6 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
