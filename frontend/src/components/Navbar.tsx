@@ -61,8 +61,8 @@ export default function Navbar() {
     <header className="bg-white shadow-medium sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="flex items-center justify-center w-14 h-14 overflow-hidden rounded-lg transition group-hover:opacity-90">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 overflow-hidden rounded-lg transition group-hover:opacity-90">
               {!logoError ? (
                 <img 
                   src="/logo.png" 
@@ -78,6 +78,10 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <div className="text-lg font-bold text-navy font-serif">{t('organizationName')}</div>
+            </div>
+            {/* Mobile organization name - visible only on xs screens */}
+            <div className="sm:hidden block max-w-[100px] truncate">
+              <div className="text-xs sm:text-sm font-bold text-navy font-serif truncate">{t('organizationName')}</div>
             </div>
           </Link>
           
