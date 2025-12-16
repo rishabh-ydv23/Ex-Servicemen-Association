@@ -110,7 +110,7 @@ export default function About() {
 
         {/* Head Members Section */}
         <section>
-          <h2 className="section-title text-blue-600 mb-8">{t('leadershipTeam')}</h2>
+          <h2 className="section-title text-blue-600 mb-8" style={{ color: '#2563eb' }}>{t('leadershipTeam')}</h2>
           
           {/* Fixed Leadership Profiles */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
