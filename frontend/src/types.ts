@@ -29,6 +29,7 @@ export type Member = {
   role: string
   bio?: string
   photoUrl?: string
+  mobile?: string
   priority?: number
 }
 

@@ -11,18 +11,18 @@ router.get('/', async (_req, res) => {
 });
 
 router.post('/', requireAuth, upload.single('photo'), async (req, res) => {
-  const { name, role, bio, priority } = req.body || {};
+  const { name, role, bio, mobile, priority } = req.body || {};
   if (!name || !role) return res.status(400).json({ message: 'Name and role required' });
   const base = `${req.protocol}://${req.get('host')}`;
   const photoUrl = req.file ? `${base}/uploads/${req.file.filename}` : undefined;
-  const created = await Member.create({ name, role, bio, priority: Number(priority) || 0, photoUrl });
+  const created = await Member.create({ name, role, bio, mobile, priority: Number(priority) || 0, photoUrl });
   res.json(created);
 });
 
 router.put('/:id', requireAuth, upload.single('photo'), async (req, res) => {
-  const { name, role, bio, priority } = req.body || {};
+  const { name, role, bio, mobile, priority } = req.body || {};
   const base = `${req.protocol}://${req.get('host')}`;
-  const updates = { name, role, bio, priority: Number(priority) || 0 };
+  const updates = { name, role, bio, mobile, priority: Number(priority) || 0 };
   if (req.file) updates.photoUrl = `${base}/uploads/${req.file.filename}`;
   const updated = await Member.findByIdAndUpdate(req.params.id, updates, { new: true });
   if (!updated) return res.status(404).json({ message: 'Not found' });

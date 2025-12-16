@@ -5,7 +5,8 @@ const MemberSchema = new mongoose.Schema(
     name: { type: String, required: true },
     role: { type: String, required: true },
     bio: { type: String, default: '' },
-    photoUrl: { type: String }
+    photoUrl: { type: String },
+    mobile: { type: String, default: '' }
   },
   { timestamps: true }
 );
